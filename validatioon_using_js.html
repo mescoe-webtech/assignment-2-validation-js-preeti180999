@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+      .val {
+      margin-left: 70px;
+      font-weight: bold ;
+      text-align: left;
+      font-family:sans-serif,bold, Arial, Helvetica;
+      font-size:14px;
+      }
+      .buttons{
+      display:flex;
+      align-items: center;
+      width:100%;
+      }
+      div input{
+      margin-right:10px;
+      }
+      form {
+      margin: 0 auto;
+      width: 600px;
+      }
+      form input{
+      padding: 10px;
+      }
+      form select{
+      background-color: #ffffff;
+      padding:5px;
+      }
+      form textarea{
+      padding:10px;
+      margin-bottom:5px;
+      }
+      form label{
+      display:block;
+      width:100%;
+      margin-bottom:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center"> Registration Form </h2>
+    <form  onsubmit="return val()"  >
+      <div>
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" size="60" name="Name">
+      </div>
+      <br>
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" size="60" name="Address"> 
+      </div>
+      <br>
+      <div>
+        <label for="E-mail"l>E-mail Address:</label>
+        <input type="text" id="E-mail" size="60" name="Email">
+      </div>
+      <br>
+      <div>
+        <label for="Password">Password:</label>
+        <input type="text" id="Password" size="60" name="Password">
+      </div>
+      <br>
+      <div>
+        <label for="Telephone">Telephone: </label>
+        <input type="text" id="Telephone" size="60" name="Telephone"> 
+      </div>
+      <br>
+      <div>
+        <label>Select Book</label>
+        <select type="text" value="" name="Subject">
+          <option></option>
+          <option>HTML</option>
+          <option>CSS</option>
+          <option>PHP</option>
+          <option>JavaScript</option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <label for="comment">Comments: </label>
+        <textarea cols="62" id="comment" rows="10" name="Comment"></textarea>
+      </div>
+      <div class="buttons">
+        <input type="submit" value="Submit" name="Submit">
+        <input type="reset" value="Reset" name="Reset">
+      </div>
+    </form>
+    <script> 
+      function val()                               
+      { 
+          var name = document.getElementById("Name").value  ;               
+          var email = document.getElementById("E-mail").value  ;     
+          var phone = document.getElementById("Telephone").value  ;  
+          var what =  document.getElementById("Subject").value  ;   
+          var password = document.getElementById("Password").value  ;   
+          var address = document.getElementById("address").value  ;  
+          var comment = document.getElementById("comment").value  ;  
+          if (name=="")                                  
+          { 
+              alert("Please enter your name."); 
+              return false; 
+          }    
+          if (address=="")                               
+          { 
+              alert("Please enter your address."); 
+             
+              return false; 
+          }        
+          if (email=="")                                   
+          { 
+              alert("Please enter a valid e-mail address."); 
+             
+              return false; 
+          }    
+          if (email.value.indexOf("@", 0) < 0)                 
+          { 
+             alert("Please enter a valid e-mail address."); 
+              
+              return false; 
+          }    
+          if (email.value.indexOf(".", 0) < 0)                 
+          { 
+              alert("Please enter a valid e-mail address."); 
+              return false; 
+          }    
+          if (phone == "")                           
+          { 
+              alert("Please enter your telephone number."); 
+              return false; 
+          }    
+          if (password=="")                        
+          { 
+              alert("Please enter your password"); 
+             
+              return false; 
+          }    
+          if (what.selectedIndex < 1)                  
+          { 
+              alert("Please enter your course."); 
+              what.focus(); 
+              return false; 
+          } 
+          if (comment=="")                  
+          { 
+             alert("Please enter a comment."); 
+            
+             return false; 
+          } 
+          return true; 
+      }
+    </script> 
+  </body>
+</html>
